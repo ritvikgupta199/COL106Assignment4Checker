@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public class Driver {
 
+    // Remove cases if you dont want to evaluate the code on them
     static final String[] cases = new String[] { "small", "large", "dfs" };
-    static final long SEED = 12199;
-    static final String IN_DIR = "inputs/";
-    static final String OUT_DIR = "outputs/";
-    static final String CORR_DIR = "model_outputs/";
+    static final long SEED = 12199; // Seed value for random number generator
+    static final String IN_DIR = "inputs/"; // Inputs directory
+    static final String OUT_DIR = "outputs/"; // Outputs directory
+    static final String CORR_DIR = "model_outputs/"; // Model Outputs directory
 
     static String nodesFile = "GeneratedNodes.csv";
     static String egdesFile = "GeneratedEdges.csv";
@@ -32,7 +33,7 @@ public class Driver {
         }
         for (String s : cases) {
             boolean c = compareOutputs(OUT_DIR + name + "_" + s + "_" + out, CORR_DIR + "model" + "_" + s + "_" + out);
-            System.out.println("Output for \"" + s + "\"" + (c ? "has matched" : "does not match"));
+            System.out.println("Output for \"" + s + "\" " + (c ? "has matched" : "does not match"));
         }
     }
 
