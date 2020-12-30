@@ -30,10 +30,8 @@ public class Driver {
         }
         for (String s : cases) {
             runCode(s);
-        }
-        for (String s : cases) {
             boolean c = compareOutputs(OUT_DIR + name + "_" + s + "_" + out, CORR_DIR + "model" + "_" + s + "_" + out);
-            System.out.println("Output for \"" + s + "\" " + (c ? "has matched" : "does not match"));
+            System.out.println("Output for \"" + s + "\" " + (c ? "has matched" : "does not match \n"));
         }
     }
 
@@ -60,7 +58,6 @@ public class Driver {
         System.out.println("Time taken to run rank is: " + rankTime / 1000000 + "ms");
         System.out.println("Time taken to run independant_storylines_dfs is: " + dfsTime / 1000000 + "ms");
         System.out.println("Output stored in " + name + "_" + type + "_" + out);
-        System.out.print("\n");
     }
 
     static long runFunction(String func, String nodes, String edges) {
