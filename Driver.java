@@ -68,7 +68,10 @@ public class Driver {
         long end;
         System.out.println(func);
         start = System.nanoTime();
-        assignment4.main(new String[] { nodes, edges, func });
+        try {
+            assignment4.main(new String[] { nodes, edges, func });
+        } catch (Exception e) {
+        }
         end = System.nanoTime() - start;
         return end;
     }
