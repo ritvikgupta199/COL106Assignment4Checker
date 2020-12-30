@@ -63,7 +63,7 @@ public class Driver {
         System.out.print("\n");
     }
 
-    static long runFunction(String func, String nodes, String edges) throws FileNotFoundException {
+    static long runFunction(String func, String nodes, String edges) {
         long start;
         long end;
         System.out.println(func);
@@ -71,6 +71,7 @@ public class Driver {
         try {
             assignment4.main(new String[] { nodes, edges, func });
         } catch (Exception e) {
+            System.out.println("Error occured");
         }
         end = System.nanoTime() - start;
         return end;
