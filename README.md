@@ -1,4 +1,4 @@
-# Unofficial Test Case Generator and Evaluater for COL106 Assignment 4
+# Unofficial Test Case Generator and Evaluator for COL106 Assignment 4
 
 ## How to use?
 * Clone the repository or download the zip.
@@ -19,4 +19,11 @@ There are three types of testcases currently present.
 * **Program taking too much time to run:**
   The execution should take a few seconds at max. If the program takes too much time to execute, then the program may be stuck in a loop or the sorting function would not have been O(nlogn).
   
+### Constants
+* `SEED`: This is the seed used in generating the pseudo random numbers. This ensures that the same input sequences are generated everytime. You may change the seed to produce a different input sequence.
+* `IN_DIR`: This is the directory where the CSV files generated for the inputs are saved.
+* `OUT_DIR`: This is the directory where the outputs are saved in txt files after execution.
+* `CORR_DIR`: This is the directory where the model outputs are stored. If you wish to replace the model outputs, name them as "model_[type]_out.txt", where [type] is the type of testcase (small, large, or dfs).
+* `cases`: This stores the types of testcases on which the program is evaluated. You may remove some testcases from this if you do not wish to evaluate the code on them.
+
 **NOTE:** Matching outputs in no way guarantees that your program is correct.
