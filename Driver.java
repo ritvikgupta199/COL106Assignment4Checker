@@ -31,7 +31,7 @@ public class Driver {
         for (String s : cases) {
             runCode(s);
             boolean c = compareOutputs(OUT_DIR + name + "_" + s + "_" + out, CORR_DIR + "model" + "_" + s + "_" + out);
-            System.out.println("Output for \"" + s + "\" " + (c ? "has matched" : "does not match \n"));
+            System.out.println("Output for \"" + s + "\" " + (c ? "has matched \n" : "does not match \n"));
         }
     }
 

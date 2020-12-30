@@ -18,6 +18,9 @@ There are three types of testcases currently present.
   
 * **Program taking too much time to run:**
   The execution should take a few seconds at max. If the program takes too much time to execute, then the program may be stuck in a loop or the sorting function would not have been O(nlogn).
+
+* **Driver giving StackOverflowError:**
+  This is generally caused when the Driver is run with normal stack size as the test cases are very large and there would be a large number of recursive calls. To avoid this, use `make run`, `make build`, or `java -Xss16m Driver` instead of using `java Driver`. This would increase the stack size which should be sufficient to run the test cases.
   
 ### Constants
 * `SEED`: This is the seed used in generating the pseudo random numbers. This ensures that the same input sequences are generated everytime. You may change the seed to produce a different input sequence.
