@@ -28,5 +28,6 @@ There are three types of testcases currently present.
 * `OUT_DIR`: This is the directory where the outputs are saved in txt files after execution.
 * `CORR_DIR`: This is the directory where the model outputs are stored. If you wish to replace the model outputs, name them as "model_[type]_out.txt", where [type] is the type of testcase (small, large, or dfs).
 * `cases`: This stores the types of testcases on which the program is evaluated. You may remove some testcases from this if you do not wish to evaluate the code on them.
+* `functions`: This stores the functions on which the code is tested. Change the model outputs accordingly if you have changed the functions.
 
 **NOTE:** Matching outputs in no way guarantees that your program is correct.
