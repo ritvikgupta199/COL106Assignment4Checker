@@ -7,6 +7,8 @@ public class Driver {
 
     // Remove cases if you dont want to evaluate the code on them
     static final String[] cases = new String[] { "small", "large", "dfs" };
+    // Functions on which the code is tested
+    static final String[] functions = new String[] { "average", "rank", "independent_storylines_dfs" }; 
     static final long SEED = 12199; // Seed value for random number generator
     static final String IN_DIR = "inputs/"; // Inputs directory
     static final String OUT_DIR = "outputs/"; // Outputs directory
@@ -36,9 +38,6 @@ public class Driver {
     }
 
     static void runCode(String type) throws FileNotFoundException {
-        long avgTime;
-        long rankTime;
-        long dfsTime;
 
         File file = new File(OUT_DIR + name + "_" + type + "_" + out);
         file.getParentFile().mkdirs();
@@ -49,14 +48,16 @@ public class Driver {
         String nodes = IN_DIR + type + nodesFile;
         String edges = IN_DIR + type + egdesFile;
 
-        avgTime = runFunction("average", nodes, edges);
-        rankTime = runFunction("rank", nodes, edges);
-        dfsTime = runFunction("independent_storylines_dfs", nodes, edges);
+        long[] time = new long[functions.length];
+        for (int i = 0; i < functions.length; i++) {
+            time[i] = runFunction(functions[i], nodes, edges);
+        }
 
         System.setOut(console);
-        System.out.println("Time taken to run average is: " + avgTime / 1000000 + "ms");
-        System.out.println("Time taken to run rank is: " + rankTime / 1000000 + "ms");
-        System.out.println("Time taken to run independant_storylines_dfs is: " + dfsTime / 1000000 + "ms");
+
+        for (int i = 0; i < functions.length; i++) {
+            System.out.println("Time taken to run " + functions[i] + " is: " + time[i] / 1000000 + "ms");
+        }
         System.out.println("Output stored in " + name + "_" + type + "_" + out);
     }
 
