@@ -21,7 +21,10 @@ There are three types of testcases currently present.
 
 * **Driver giving StackOverflowError:**
   This is generally caused when the Driver is run with normal stack size as the test cases are very large and there would be a large number of recursive calls. To avoid this, use `make run`, `make build`, or `java -Xss16m Driver` instead of using `java Driver`. This would increase the stack size which should be sufficient to run the test cases.
-  
+
+* **Receiving IndexOutOfBoundsException:**
+  If your code is correct but fails on this driver, it is probably because you are using static variables. To escape this error, create a constructor for your `assignment4` and initialise your static variables in it.
+
 ### Constants
 * `SEED`: This is the seed used in generating the pseudo random numbers. This ensures that the same input sequences are generated everytime. You may change the seed to produce a different input sequence.
 * `IN_DIR`: This is the directory where the CSV files generated for the inputs are saved.

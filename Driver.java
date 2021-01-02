@@ -67,7 +67,8 @@ public class Driver {
         System.out.println(func);
         start = System.nanoTime();
         try {
-            assignment4.main(new String[] { nodes, edges, func });
+            assignment4 instanceAssignment4 = new assignment4();
+            instanceAssignment4.main(new String[] { nodes, edges, func });
         } catch (Exception e) {
             System.out.println("Error occured");
         }
